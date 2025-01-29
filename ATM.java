@@ -48,12 +48,38 @@ public class Account{
     
     public double balance(){  return balance; }
 
-    Public void deposit(double amt){
+    public void deposit(double amt){
         if(amt > 0){
             balance += amt;
             System.out.println("You Deposit the Amount of Rs."+amt);
             System.out.println("Your Account Balance is Rs."+balance);
+        }
+        else{
+            System.out.println("Please enter the valid amount!");
+        }
+    }
+
+    public void withdraw(double amt){
+        if(amt > 0){
+            balance -= amt;
+            System.out.println("You Withdraw a amount of Rs."+amt);
+            System.out.println("Your Account Balance is Rs."+balance);
+        }
+        else{
+            System.out.println("Please enter the vaild Withdraw amount!");
+        }
+    }
+
+    public void checkbal(){
+        System.out.println("Your Account Balance is Rs."+balance);
     }
 }
 
+public class main{
+    public static void main(String args[]){
+        Account user = new Account(1000);
+        Atm a = new Atm(user);
+        a.PT();
+    }
+}
 
