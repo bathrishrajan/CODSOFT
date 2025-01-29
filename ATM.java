@@ -48,8 +48,11 @@ public class Account{
     
     public double balance(){  return balance; }
 
-    Public void deposit(){
-
+    Public void deposit(double amt){
+        if(amt > 0){
+            balance += amt;
+            System.out.println("You Deposit the Amount of Rs."+amt);
+            System.out.println("Your Account Balance is Rs."+balance);
     }
 }
 
